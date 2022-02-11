@@ -1,0 +1,210 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+body {
+  background-color: hsl(240, 3%, 7%);
+  display: flex;
+  flex-direction: column;
+  min-width: 100vh;
+  margin: 0;
+  padding: 1em;
+  font-size: clamp(0.5rem, 2.5vmin, 1.5rem);
+}
+
+.keyboard {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(37, minmax(auto, 1.25em));
+  grid-auto-rows: 3em;
+  gap: 0.25em;
+}
+.key {
+  font-size: inherit;
+  grid-column: span 2;
+  border: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(
+    var(--hue, 200),
+    var(--saturation, 1%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 51%))
+  );
+  color: white;
+  fill: white;
+  border-radius: 0.25em;
+  cursor: pointer;
+  user-select: none;
+}
+.large {
+  font-size: inherit;
+  grid-column: span 3;
+}
+.key > svg {
+  width: 1.75em;
+  height: 1.75em;
+}
+
+.key:hover,
+.key:focus,
+.White:hover,
+.White:focus,
+.Grey:hover,
+.Grey:focus,
+.Yellow:hover,
+.Yellow:focus,
+.Orange:hover,
+.Orange:focus,
+.Brown:hover,
+.Brown:focus,
+.Purple:hover,
+.Purple:focus,
+.Pink:hover,
+.Pink:focus,
+.Blue:hover,
+.Blue:focus,
+.Green:hover,
+.Green:focus,
+.Red:hover,
+.Red:focus {
+  --lightness-offset: 10%;
+}
+
+.Grey {
+  background-color: hsl(
+    var(--hue, 0),
+    var(--saturation, 0%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 50%))
+  );
+}
+
+.White {
+  background-color: hsl(
+    var(--hue, 0),
+    var(--saturation, 0%),
+    calc(var(--lightness, 100%) - var(--lightness-offset, 0%))
+  );
+}
+
+.Yellow {
+  background-color: hsl(
+    var(--hue, 61),
+    var(--saturation, 100%),
+    calc(var(--lightness, 50%) - var(--lightness-offset, 0%))
+  );
+}
+
+.Orange {
+  background-color: hsl(
+    var(--hue, 32),
+    var(--saturation, 100%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 50%))
+  );
+}
+
+.Red {
+  background-color: hsl(
+    var(--hue, 0),
+    var(--saturation, 100%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 50%))
+  );
+}
+
+.Brown {
+  background-color: hsl(
+    var(--hue, 0),
+    var(--saturation, 60%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 40%))
+  );
+}
+
+.Purple {
+  background-color: hsl(
+    var(--hue, 300),
+    var(--saturation, 100%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 25%))
+  );
+}
+
+.Blue {
+  background-color: hsl(
+    var(--hue, 240),
+    var(--saturation, 100%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 50%))
+  );
+}
+
+.Pink {
+  background-color: hsl(
+    var(--hue, 235),
+    var(--saturation, 78%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 65%))
+  );
+}
+
+.Green {
+  background-color: hsl(
+    var(--hue, 120),
+    var(--saturation, 100%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 42%))
+  );
+}
+
+.guess-grid {
+  display: grid;
+  justify-content: center;
+  flex-grow: 1;
+  grid-template-columns: repeat(5, 4em);
+  grid-template-rows: repeat(6, 4em);
+}
+
+.tile {
+  background-color: red;
+}
+.lampContainer {
+  display: grid;
+  justify-content: center;
+  flex-grow: 1;
+  grid-template-columns: repeat(5, 4em);
+  grid-template-rows: repeat(1, 4em);
+}
+
+.Check {
+  background-color: hsl(
+    var(--hue, 200),
+    var(--saturation, 1%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 51%))
+  );
+  border-radius: 50%;
+}
+
+.good {
+  background-color: hsl(
+    var(--hue, 120),
+    var(--saturation, 100%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 42%))
+  );
+  border-radius: 50%;
+}
+.wrong {
+  background-color: hsl(
+    var(--hue, 0),
+    var(--saturation, 100%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 50%))
+  );
+  border-radius: 50%;
+}
+
+.wrongPlace {
+  background-color: hsl(
+    var(--hue, 60),
+    var(--saturation, 100%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 50%))
+  );
+  border-radius: 50%;
+}
